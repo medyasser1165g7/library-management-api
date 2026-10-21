@@ -18,6 +18,7 @@ public class Borrowing {
 
     private LocalDateTime borrowedAt;
     private LocalDateTime returnedAt;
+    private LocalDateTime dueDate;
 
     @ManyToOne
     @JoinColumn(name = "member_id")

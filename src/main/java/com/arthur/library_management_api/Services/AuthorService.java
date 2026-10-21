@@ -1,9 +1,9 @@
 package com.arthur.library_management_api.Services;
 
-import com.arthur.library_management_api.DTOs.AuthorCreateDTO;
-import com.arthur.library_management_api.DTOs.AuthorDetailsResponseDTO;
-import com.arthur.library_management_api.DTOs.AuthorResponseDTO;
-import com.arthur.library_management_api.DTOs.AuthorUpdateDTO;
+import com.arthur.library_management_api.DTOs.AuthorDTOs.AuthorCreateDTO;
+import com.arthur.library_management_api.DTOs.AuthorDTOs.AuthorDetailsResponseDTO;
+import com.arthur.library_management_api.DTOs.AuthorDTOs.AuthorResponseDTO;
+import com.arthur.library_management_api.DTOs.AuthorDTOs.AuthorUpdateDTO;
 import com.arthur.library_management_api.Entities.Author;
 import com.arthur.library_management_api.Exceptions.AuthorNotFoundException;
 import com.arthur.library_management_api.Mappers.AuthorMapper;

@@ -1,11 +1,9 @@
-package com.arthur.library_management_api.DTOs;
+package com.arthur.library_management_api.DTOs.AuthorDTOs;
 
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Getter

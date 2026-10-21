@@ -1,19 +1,15 @@
-package com.arthur.library_management_api.DTOs;
+package com.arthur.library_management_api.DTOs.BookDTOs;
 
-import com.arthur.library_management_api.Entities.Author;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.Year;
 
-@Getter @Setter
-@NoArgsConstructor
-@AllArgsConstructor
-public class BookCreateDTO {
+@Getter
+@Setter
+public class BookUpdateDTO {
     @NotBlank
     private String title;
     private String isbn;

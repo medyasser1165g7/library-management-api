@@ -1,10 +1,11 @@
 package com.arthur.library_management_api.Services;
 
-import com.arthur.library_management_api.DTOs.BookCreateDTO;
-import com.arthur.library_management_api.DTOs.BookResponseDTO;
-import com.arthur.library_management_api.DTOs.BookUpdateDTO;
+import com.arthur.library_management_api.DTOs.BookDTOs.BookCreateDTO;
+import com.arthur.library_management_api.DTOs.BookDTOs.BookResponseDTO;
+import com.arthur.library_management_api.DTOs.BookDTOs.BookUpdateDTO;
 import com.arthur.library_management_api.Entities.Author;
 import com.arthur.library_management_api.Entities.Book;
+import com.arthur.library_management_api.Exceptions.AuthorNotFoundException;
 import com.arthur.library_management_api.Exceptions.BookNotFoundException;
 import com.arthur.library_management_api.Mappers.BookMapper;
 import com.arthur.library_management_api.Repositories.AuthorRepository;
@@ -24,7 +25,7 @@ public class BookService {
     private final BookMapper bookMapper;
 
     public BookResponseDTO createBook(BookCreateDTO bookCreateDTO){
-        Author author = authorRepository.findById(bookCreateDTO.getAuthorId()).orElseThrow();
+        Author author = authorRepository.findById(bookCreateDTO.getAuthorId()).orElseThrow( () -> new AuthorNotFoundException("Author with id: " + bookCreateDTO.getAuthorId() + " not found."));
         Book book = bookRepository.save(bookMapper.toEntity(bookCreateDTO, author));
         return bookMapper.toBookResponseDTO(book);
     }
@@ -52,7 +53,7 @@ public class BookService {
     //update book by id
     public BookResponseDTO updateBookById(BookUpdateDTO bookUpdateDTO, Long bookId){
         Book book = bookRepository.findById(bookId).orElseThrow( () -> new BookNotFoundException("Book with id: " + bookId + " not found.") );
-        Author author = authorRepository.findById(bookUpdateDTO.getAuthorId()).orElseThrow();
+        Author author = authorRepository.findById(bookUpdateDTO.getAuthorId()).orElseThrow( () -> new AuthorNotFoundException("Author with id: " + bookUpdateDTO.getAuthorId() + " not found."));
         Book saveBook = bookRepository.save(bookMapper.updateEntityFromDto(bookUpdateDTO, book, author));
 
         return bookMapper.toBookResponseDTO(saveBook);

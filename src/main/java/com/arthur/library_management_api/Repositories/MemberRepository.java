@@ -1,0 +1,12 @@
+package com.arthur.library_management_api.Repositories;
+
+import com.arthur.library_management_api.Entities.Member;
+import com.arthur.library_management_api.Mappers.MemberMapper;
+import lombok.AllArgsConstructor;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface MemberRepository extends JpaRepository<Member, Long> {
+
+}

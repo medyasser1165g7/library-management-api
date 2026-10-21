@@ -1,8 +1,8 @@
     package com.arthur.library_management_api.Controllers;
 
-    import com.arthur.library_management_api.DTOs.BookCreateDTO;
-    import com.arthur.library_management_api.DTOs.BookResponseDTO;
-    import com.arthur.library_management_api.DTOs.BookUpdateDTO;
+    import com.arthur.library_management_api.DTOs.BookDTOs.BookCreateDTO;
+    import com.arthur.library_management_api.DTOs.BookDTOs.BookResponseDTO;
+    import com.arthur.library_management_api.DTOs.BookDTOs.BookUpdateDTO;
     import com.arthur.library_management_api.Services.BookService;
     import jakarta.validation.Valid;
     import lombok.AllArgsConstructor;

@@ -1,4 +1,4 @@
-package com.arthur.library_management_api.DTOs;
+package com.arthur.library_management_api.DTOs.BookDTOs;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -9,12 +9,11 @@ import java.time.Year;
 
 @Getter
 @Setter
-
-public class BookResponseDTO {
+@NoArgsConstructor
+@AllArgsConstructor
+public class BookSummaryDTO {
     private Long id;
     private String title;
     private String isbn;
     private Year published_year;
-    private Boolean available;
-    private AuthorResponseDTO authorResponseDTO;
 }

@@ -1,5 +1,6 @@
-package com.arthur.library_management_api.DTOs;
+package com.arthur.library_management_api.DTOs.AuthorDTOs;
 
+import com.arthur.library_management_api.DTOs.BookDTOs.BookSummaryDTO;
 import lombok.Getter;
 import lombok.Setter;
 

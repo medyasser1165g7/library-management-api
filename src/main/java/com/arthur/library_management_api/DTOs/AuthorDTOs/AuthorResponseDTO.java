@@ -1,10 +1,7 @@
-package com.arthur.library_management_api.DTOs;
+package com.arthur.library_management_api.DTOs.AuthorDTOs;
 
-import com.arthur.library_management_api.Entities.Book;
 import lombok.Getter;
 import lombok.Setter;
-
-import java.util.List;
 
 @Getter
 @Setter

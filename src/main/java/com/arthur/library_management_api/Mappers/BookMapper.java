@@ -1,6 +1,10 @@
 package com.arthur.library_management_api.Mappers;
 
-import com.arthur.library_management_api.DTOs.*;
+import com.arthur.library_management_api.DTOs.AuthorDTOs.AuthorResponseDTO;
+import com.arthur.library_management_api.DTOs.BookDTOs.BookCreateDTO;
+import com.arthur.library_management_api.DTOs.BookDTOs.BookResponseDTO;
+import com.arthur.library_management_api.DTOs.BookDTOs.BookSummaryDTO;
+import com.arthur.library_management_api.DTOs.BookDTOs.BookUpdateDTO;
 import com.arthur.library_management_api.Entities.Author;
 import com.arthur.library_management_api.Entities.Book;
 import lombok.AllArgsConstructor;
@@ -24,6 +28,7 @@ public class BookMapper {
         bookResponseDTO.setTitle(book.getTitle());
         bookResponseDTO.setIsbn(book.getIsbn());
         bookResponseDTO.setPublished_year(book.getPublishedYear());
+        bookResponseDTO.setAvailable(book.isAvailable());
         AuthorResponseDTO authorDTO = new AuthorResponseDTO();
         authorDTO.setId(book.getAuthor().getId());
         authorDTO.setName(book.getAuthor().getName());
@@ -38,6 +43,7 @@ public class BookMapper {
         bookSummaryDTO.setTitle(book.getTitle());
         bookSummaryDTO.setIsbn(book.getIsbn());
         bookSummaryDTO.setPublished_year(book.getPublishedYear());
+
         return bookSummaryDTO;
     }
     public Book updateEntityFromDto(

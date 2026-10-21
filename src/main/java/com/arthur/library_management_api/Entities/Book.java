@@ -26,7 +26,7 @@ public class Book {
     private String isbn;
     @NotNull
     private Year publishedYear;
-    private boolean available;
+    private boolean available = true;
 
     @ManyToOne
     @JoinColumn(name = "author_id")
